@@ -1,1 +1,1 @@
-alert (`Hello`)
+import "materialize-css";
