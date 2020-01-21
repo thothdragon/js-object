@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_shared_models_city__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/shared/models/city */ \"./src/app/shared/models/city.js\");\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/app-component */ \"./src/app/app-component.js\");\n\nvar component = new _app_app_component__WEBPACK_IMPORTED_MODULE_0__[\"AppComponent\"]();\nconsole.log(component);\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -109,51 +109,26 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 
 /***/ }),
 
-/***/ "./src/app/shared/models/city.js":
-/*!***************************************!*\
-  !*** ./src/app/shared/models/city.js ***!
-  \***************************************/
-/*! exports provided: City */
+/***/ "./src/app/app-component.js":
+/*!**********************************!*\
+  !*** ./src/app/app-component.js ***!
+  \**********************************/
+/*! exports provided: AppComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"City\", function() { return City; });\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ \"./src/app/shared/models/weather.js\");\n/* harmony import */ var _pollution__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pollution */ \"./src/app/shared/models/pollution.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\n\nvar City = function City() {\n  _classCallCheck(this, City);\n\n  this.name = null;\n  this.dayTime = null;\n  this.weather = new _weather__WEBPACK_IMPORTED_MODULE_0__[\"Weather\"]();\n  this.pollution = new _pollution__WEBPACK_IMPORTED_MODULE_1__[\"Pollution\"]();\n};\n\n//# sourceURL=webpack:///./src/app/shared/models/city.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AppComponent\", function() { return AppComponent; });\n/* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-component.scss */ \"./src/app/app-component.scss\");\n/* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_component_scss__WEBPACK_IMPORTED_MODULE_0__);\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\nvar AppComponent = function AppComponent() {\n  _classCallCheck(this, AppComponent);\n\n  this.selector = \"aw-app\";\n  this.template = \"<h1>Hello World</h1>\";\n};\n\n//# sourceURL=webpack:///./src/app/app-component.js?");
 
 /***/ }),
 
-/***/ "./src/app/shared/models/pollution.js":
-/*!********************************************!*\
-  !*** ./src/app/shared/models/pollution.js ***!
-  \********************************************/
-/*! exports provided: Pollution */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/app/app-component.scss":
+/*!************************************!*\
+  !*** ./src/app/app-component.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Pollution\", function() { return Pollution; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Pollution = function Pollution() {\n  _classCallCheck(this, Pollution);\n\n  this.airQuality = null;\n  this.fineParticle = null;\n  this.ozone = null;\n};\n\n//# sourceURL=webpack:///./src/app/shared/models/pollution.js?");
-
-/***/ }),
-
-/***/ "./src/app/shared/models/temperature.js":
-/*!**********************************************!*\
-  !*** ./src/app/shared/models/temperature.js ***!
-  \**********************************************/
-/*! exports provided: Temperature */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Temperature\", function() { return Temperature; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Temperature = function Temperature() {\n  _classCallCheck(this, Temperature);\n\n  this.actual = null;\n  this.min = null;\n  this.max = null;\n};\n\n//# sourceURL=webpack:///./src/app/shared/models/temperature.js?");
-
-/***/ }),
-
-/***/ "./src/app/shared/models/weather.js":
-/*!******************************************!*\
-  !*** ./src/app/shared/models/weather.js ***!
-  \******************************************/
-/*! exports provided: Weather */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Weather\", function() { return Weather; });\n/* harmony import */ var _temperature__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./temperature */ \"./src/app/shared/models/temperature.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\nvar Weather = function Weather() {\n  _classCallCheck(this, Weather);\n\n  this.description = null;\n  this.humidity = null;\n  this.wind = null;\n  this.temperature = new _temperature__WEBPACK_IMPORTED_MODULE_0__[\"Temperature\"]();\n};\n\n//# sourceURL=webpack:///./src/app/shared/models/weather.js?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/app/app-component.scss?");
 
 /***/ }),
 

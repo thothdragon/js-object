@@ -1,1 +1,5 @@
-import { City } from "./app/shared/models/city";
+import { AppComponent } from "./app/app-component";
+
+const component = new AppComponent;
+
+console.log(component);
