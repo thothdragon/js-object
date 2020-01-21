@@ -27,7 +27,13 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(eot|ttf|woff|woff2|png|jpe?g|gif)$/i,
+                use: [
+                    'file-loader'
+                ]
+            },
         ]
     },
     watchOptions: {
