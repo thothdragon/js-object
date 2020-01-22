@@ -37,14 +37,14 @@ export class AppComponent {
     render() {
         document.querySelector(this.selector).innerHTML = this.template;
         this.components.forEach(component => component.render());
+        this.event();
+    }
 
-        document.querySelector(`${this.selector} .sidenav input + a`).addEventListener(
-            `click`, () => { this.onClickAddCity() }
-        );
-
-        document.querySelector(`${this.selector} .sidenav input`).addEventListener(
-            `keyup`, (event) => { this.onKeyPressAccessKey(event) }
-        );
+    event() {
+        document.querySelector(`${this.selector} .sidenav input + a`)
+            .addEventListener(`click`, event => this.onClickAddCity());
+        document.querySelector(`${this.selector} .sidenav input`)
+            .addEventListener(`keyup`, event => this.onKeyPressAccessKey(event));
         global.M.Sidenav.init(document.querySelectorAll(`${this.selector} .sidenav`));
     }
 
@@ -59,14 +59,11 @@ export class AppComponent {
     };
 
     onKeyPressAccessKey(event) {
-        console.log(`onKeyPressAccessKey`);
-
-        // if (13 === event.keyCode) {
-        //     onBlurCloseSidenav();
-        // } else if (27 === event.keyCode) {
-        //     document.querySelector(`#cityName`).value = ``;
-        //     onBlurCloseSidenav();
-        // };
+        if (13 === event.keyCode) {
+            this.onClickAddCity();
+        } else if (27 === event.keyCode) {
+            M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
+        };
     };
 
 }
