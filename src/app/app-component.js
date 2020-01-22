@@ -7,12 +7,12 @@ import { CityService } from "./shared/services/city-service";
 export class AppComponent {
 
     constructor() {
+        this.service = new CityService;
         this.components = [
             new WeatherComponent(),
             new PollutionComponent(),
-            new ProgressComponent()
+            new ProgressComponent(this.service)
         ];
-        this.service = new CityService;
         this.selector = `aw-app`;
         this.template = `
             <aw-progress></aw-progress>
@@ -42,6 +42,7 @@ export class AppComponent {
             element.innerHTML = this.template;
             this.events();
         }
+        document.querySelector(`${this.selector} .city-name`).innerHTML = this.service.city.name;
         this.components.forEach(component => component.render());
     }
 
@@ -57,6 +58,8 @@ export class AppComponent {
         const input = document.querySelector(`${this.selector} .sidenav input`);
         this.service.create(input.value);
         this.render();
+        this.service.retrieveWeather(() => { this.render() }, input.value);
+        input.value = ``;
         M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
     };
 

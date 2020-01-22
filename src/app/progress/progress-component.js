@@ -1,8 +1,13 @@
 import "./progress-component.scss";
+import { CityService } from "../shared/services/city-service";
 
 export class ProgressComponent {
 
-    constructor() {
+    /**
+     * @param {CityService} service 
+     */
+    constructor(service) {
+        this.service = service;
         this.selector = "aw-progress";
         this.template = `
             <div class="progress">
@@ -12,7 +17,12 @@ export class ProgressComponent {
     }
 
     render() {
-        document.querySelector(this.selector).innerHTML = this.template;
+        let html = ``;
+        if (this.service.city.name 
+            && !this.service.city.weather.temperature.actual) {
+            html = this.template;
+        };
+        document.querySelector(this.selector).innerHTML = html;
     }
 
 }
