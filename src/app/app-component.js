@@ -1,10 +1,10 @@
-import './app-component.scss';
+import "./app-component.scss";
 import { WeatherComponent } from "./weather/weather";
 
 export class AppComponent {
 
     constructor() {
-        this.selector = "aw-app";
+        this.selector = 'aw-app';
         this.template = `
             <h1>Je suis app-component</h1>
             <aw-weather></aw-weather>
@@ -13,7 +13,7 @@ export class AppComponent {
     }
 
     render() {
-        document.querySelector(this.selector).innerHTML = this.template
+        document.querySelector(this.selector).innerHTML = this.template;
         this.weatherComponent.render();
     }
 

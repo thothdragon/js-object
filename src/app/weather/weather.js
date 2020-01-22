@@ -1,4 +1,4 @@
-import './weather.scss'
+import "./weather.scss";
 
 export class WeatherComponent {
 
