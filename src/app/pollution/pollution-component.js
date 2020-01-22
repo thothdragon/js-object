@@ -4,7 +4,7 @@ export class PollutionComponent {
 
     constructor() {
         this.selector = "aw-pollution";
-        this.template = "<p>Et moi je suis le pollution-component</p>";
+        this.template = "<h1>Pollution</h1>";
     }
 
     render() {

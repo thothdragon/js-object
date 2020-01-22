@@ -4,7 +4,7 @@ export class ProgressComponent {
 
     constructor() {
         this.selector = "aw-progress";
-        this.template = "<p>Et moi je suis le progress-component</p>";
+        this.template = "<h1>Progress</h1>";
     }
 
     render() {

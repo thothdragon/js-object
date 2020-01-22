@@ -7,12 +7,7 @@ export class AppComponent {
 
     constructor() {
         this.selector = `aw-app`;
-        this.template = `
-            <aw-progress></aw-progress>
-            <h1>Je suis app-component</h1>
-            <aw-weather></aw-weather>
-            <aw-pollution></aw-pollution>            
-            `;
+        this.template = "<h1>Je suis app-component</h1><aw-progress></aw-progress><aw-weather></aw-weather><aw-pollution></aw-pollution>";
         this.weatherComponent = new WeatherComponent();
         this.pollutionComponent = new PollutionComponent();
         this.progressComponent = new ProgressComponent();

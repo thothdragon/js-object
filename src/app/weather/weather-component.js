@@ -4,7 +4,7 @@ export class WeatherComponent {
 
     constructor() {
         this.selector = "aw-weather";
-        this.template = "<p>Et moi je suis le weather-component</p>";
+        this.template = "<h1>Weather</h1>";
     }
 
     render() {
