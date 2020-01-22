@@ -4,7 +4,11 @@ export class ProgressComponent {
 
     constructor() {
         this.selector = "aw-progress";
-        this.template = "<h1>Progress</h1>";
+        this.template = `
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        `;
     }
 
     render() {

@@ -1,10 +1,3 @@
-@import "~materialize-css/sass/components/_color-variables";
-
 aw-weather {
     display: block;
-    background-color: map-get($deep-orange,"base");
-
-    h1 {
-        color: green;
-    }
 }
