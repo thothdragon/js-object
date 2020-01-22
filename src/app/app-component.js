@@ -6,7 +6,7 @@ import { ProgressComponent } from "./progress/progress-component";
 export class AppComponent {
 
     constructor() {
-        this.selector = 'aw-app';
+        this.selector = `aw-app`;
         this.template = `
             <aw-progress></aw-progress>
             <h1>Je suis app-component</h1>
