@@ -3,8 +3,8 @@ import "./weather-component.scss";
 export class WeatherComponent {
 
     constructor() {
-        this.selector = `aw-weather`;
-        this.template = `<p>Et moi je suis le weather-component</p>`;
+        this.selector = "aw-weather";
+        this.template = "<p>Et moi je suis le weather-component</p>";
     }
 
     render() {
