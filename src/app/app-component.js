@@ -25,18 +25,19 @@ export class AppComponent {
                 </div>
             </ul>
             <aw-weather></aw-weather>
-            <aw-pollution></aw-pollution>`;
-        this.weatherComponent = new WeatherComponent();
-        this.pollutionComponent = new PollutionComponent();
-        this.progressComponent = new ProgressComponent();
+            <aw-pollution></aw-pollution>
+        `;
+        this.components = [
+            new WeatherComponent(),
+            new PollutionComponent(),
+            new ProgressComponent()
+        ];
     }
 
     render() {
         document.querySelector(this.selector).innerHTML = this.template;
-        global.M.Sidenav.init(document.querySelectorAll(`.sidenav`));
-        this.weatherComponent.render();
-        this.pollutionComponent.render();
-        this.progressComponent.render();
+        this.components.forEach(component => component.render());
+        global.M.Sidenav.init(document.querySelectorAll(`${this.selector} .sidenav`));
     }
 
 }
