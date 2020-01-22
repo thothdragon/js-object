@@ -19,7 +19,7 @@ export class AppComponent {
                 <h3>Cities</h3>
                 <div class="input-field">
                     <input placeholder="City Name" id="cityName" type="text" class="validate">
-                    <a class="btn-floating btn-large waves-effect waves-light">
+                    <a class="btn-floating btn waves-effect waves-light">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
@@ -37,7 +37,36 @@ export class AppComponent {
     render() {
         document.querySelector(this.selector).innerHTML = this.template;
         this.components.forEach(component => component.render());
+
+        document.querySelector(`${this.selector} .sidenav input + a`).addEventListener(
+            `click`, () => { this.onClickAddCity() }
+        );
+
+        document.querySelector(`${this.selector} .sidenav input`).addEventListener(
+            `keyup`, (event) => { this.onKeyPressAccessKey(event) }
+        );
         global.M.Sidenav.init(document.querySelectorAll(`${this.selector} .sidenav`));
     }
+
+    onClickAddCity() {
+        console.log(`onClickAddCity`);
+
+        // city.name = document.querySelector(`#cityName`).value;
+        // if (-1 === cities.indexOf(city.name)) {
+        //     cities.push(city.name);
+        // };
+        // showCity();
+    };
+
+    onKeyPressAccessKey(event) {
+        console.log(`onKeyPressAccessKey`);
+
+        // if (13 === event.keyCode) {
+        //     onBlurCloseSidenav();
+        // } else if (27 === event.keyCode) {
+        //     document.querySelector(`#cityName`).value = ``;
+        //     onBlurCloseSidenav();
+        // };
+    };
 
 }
