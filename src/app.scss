@@ -1,2 +1,15 @@
 @import "~materialize-css/sass/materialize.scss";
 @import "~material-design-icons/iconfont/material-icons.css";
+
+nav {
+    background-color: map-get($grey, "lighten-1");
+}
+
+body {
+    background-color: map-get($grey, "lighten-1");
+}
+
+#cityName {
+    width: 70%;
+    margin: 0 5px 0 5px;
+}

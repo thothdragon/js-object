@@ -3,6 +3,8 @@ aw-weather {
   display: block; }
 
 
+aw-progress .progress {
+  margin: 0 0 -4px 0; }
 
 @font-face {
   font-family: 'Material Icons';
@@ -6567,4 +6569,14 @@ input[type=range]::-ms-thumb {
     bottom: auto;
     text-align: center;
     margin-top: 1.2rem; } }
+
+nav {
+  background-color: #bdbdbd; }
+
+body {
+  background-color: #bdbdbd; }
+
+#cityName {
+  width: 70%;
+  margin: 0 5px 0 5px; }
 

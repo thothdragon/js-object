@@ -2,10 +2,17 @@ import "./app-component.scss";
 import { WeatherComponent } from "./weather/weather-component";
 import { PollutionComponent } from "./pollution/pollution-component";
 import { ProgressComponent } from "./progress/progress-component";
+import { CityService } from "./shared/services/city-service";
 
 export class AppComponent {
 
     constructor() {
+        this.components = [
+            new WeatherComponent(),
+            new PollutionComponent(),
+            new ProgressComponent()
+        ];
+        this.service = new CityService;
         this.selector = `aw-app`;
         this.template = `
             <aw-progress></aw-progress>
@@ -27,20 +34,18 @@ export class AppComponent {
             <aw-weather></aw-weather>
             <aw-pollution></aw-pollution>
         `;
-        this.components = [
-            new WeatherComponent(),
-            new PollutionComponent(),
-            new ProgressComponent()
-        ];
     }
 
     render() {
-        document.querySelector(this.selector).innerHTML = this.template;
+        const element = document.querySelector(this.selector);
+        if (!element.innerHTML) {
+            element.innerHTML = this.template;
+            this.events();
+        }
         this.components.forEach(component => component.render());
-        this.event();
     }
 
-    event() {
+    events() {
         document.querySelector(`${this.selector} .sidenav input + a`)
             .addEventListener(`click`, event => this.onClickAddCity());
         document.querySelector(`${this.selector} .sidenav input`)
@@ -49,19 +54,20 @@ export class AppComponent {
     }
 
     onClickAddCity() {
-        console.log(`onClickAddCity`);
-
-        // city.name = document.querySelector(`#cityName`).value;
-        // if (-1 === cities.indexOf(city.name)) {
-        //     cities.push(city.name);
-        // };
-        // showCity();
+        const input = document.querySelector(`${this.selector} .sidenav input`);
+        this.service.create(input.value);
+        this.render();
+        M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
     };
 
+    /**
+     * @param {KeyboardEvent} event 
+     */
     onKeyPressAccessKey(event) {
-        if (13 === event.keyCode) {
+        if (27 === event.keyCode) {
+            M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
+        } else if (13 === event.keyCode) {
             this.onClickAddCity();
-        } else if (27 === event.keyCode) {
             M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
         };
     };
