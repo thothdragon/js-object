@@ -6,7 +6,7 @@ export class PollutionComponent {
         this.service = service;
         this.selector = "aw-pollution";
         this.template = `
-            <ul>
+            <ul class="center">
                 <li>Air Quality <aw-aqi></aw-aqi></li>
                 <li>Fine Particle <aw-pm25></aw-pm25></li>
                 <li>Ozone <aw-o3></aw-o3></li>

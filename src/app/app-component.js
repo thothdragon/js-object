@@ -42,7 +42,9 @@ export class AppComponent {
             element.innerHTML = this.template;
             this.events();
         }
-        document.querySelector(`${this.selector} .city-name`).innerHTML = this.service.city.name;
+        if (null !== this.service.city.name) {
+            document.querySelector(`${this.selector} .city-name`).innerHTML = `<i class="material-icons">location_on</i> ${this.service.city.name}`;
+        }
         this.components.forEach(component => component.render());
     }
 

@@ -6,12 +6,12 @@ export class WeatherComponent {
         this.service = service;
         this.selector = "aw-weather";
         this.template = `
-            <p>
+            <p class="center">
                 <aw-tempact></aw-tempact>
                 <br/>
                 <aw-weatherdesc></aw-weatherdesc>
             </p>
-            <ul>
+            <ul class="center">
                 <li><aw-humidity></aw-humidity></li>
                 <li><aw-wind></aw-wind></li>
                 <li><aw-tempminmax></aw-tempminmax></li>

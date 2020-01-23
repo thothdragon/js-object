@@ -18,8 +18,9 @@ export class ProgressComponent {
 
     render() {
         let html = ``;
-        if (this.service.city.name 
-            && !this.service.city.weather.temperature.actual) {
+        if (this.service.city.name
+            && (!this.service.city.weather.temperature.actual
+                || !this.service.city.pollution.airQuality)) {
             html = this.template;
         };
         document.querySelector(this.selector).innerHTML = html;
