@@ -1,3 +1,18 @@
 aw-weather {
-    display: block;
+    display: flexbox;
+
+    h2 {
+        display: inline;
+    }
+
+    .tabs {
+        background-color: inherit;
+    }
+
+    .wind {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        padding: 0 5px 0 5px;
+    }
+
 }

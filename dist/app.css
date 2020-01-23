@@ -1,6 +1,14 @@
 
 aw-weather {
-  display: block; }
+  display: flexbox; }
+  aw-weather h2 {
+    display: inline; }
+  aw-weather .tabs {
+    background-color: inherit; }
+  aw-weather .wind {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0 5px 0 5px; }
 
 
 aw-progress .progress {
