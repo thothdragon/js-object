@@ -33,7 +33,6 @@ export class WeatherComponent {
             document.querySelector(`${this.selector} aw-tempminmax`)
                 .innerHTML = `${this.service.city.weather.temperature.min} °C - ${this.service.city.weather.temperature.max} °C`;
         }
-
     }
 
 }
