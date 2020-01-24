@@ -5,7 +5,7 @@ export class WeatherService {
     /**
      * @param {City} cityObject 
      */
-    constructor(cityObject) {
+    constructor() {
         this.create();
         // this.city = cityObject;
     }
@@ -22,7 +22,7 @@ export class WeatherService {
      * @param {String} name
      * @returns {Promise}
      */
-    retrieveWeather(name) {
+    retrieveByName(name) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest;
             xhr.open(`GET`, `https://api.openweathermap.org/data/2.5/weather?appid=e07ec698e7a0cff9443b2c91b5b6eca6&units=metric&q=${name}`);

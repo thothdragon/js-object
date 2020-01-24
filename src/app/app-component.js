@@ -61,17 +61,10 @@ export class AppComponent {
         this.service.create(input.value);
         this.render();
         this.service
-            .weatherService.retrieveWeather()
-            .then(weather => {
-                this.service
-                    .pollutionService.retrievePollution()
-                    .then(pollution => console.log(pollution))
-                    .catch(error => console.log(error))
-                    .finally(() => this.render());
-            })
+            .retrieve()
+            .then(city => console.log(city))
             .catch(error => console.log(error))
             .finally(() => this.render());
-
         input.value = ``;
         M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
     };

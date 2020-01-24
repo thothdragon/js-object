@@ -5,7 +5,7 @@ export class PollutionService {
     /**
      * @param {City} cityObject 
      */
-    constructor(cityObject) {
+    constructor() {
         this.create();
         // this.city = cityObject;
     }
@@ -22,7 +22,7 @@ export class PollutionService {
      * @param {String} name
      * @returns {Promise}
      */
-    retrievePollution(name) {
+    retrieveByName(name) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest;
             xhr.open(`GET`, `https://api.waqi.info/feed/${name}/?token=69d857f98b6535eeaedad3faea80f44a4195605b`);

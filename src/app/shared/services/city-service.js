@@ -5,32 +5,31 @@ import { PollutionService } from "./pollution-service";
 export class CityService {
 
     constructor() {
+        this.weatherService = new WeatherService();
+        this.pollutionService = new PollutionService();
         this.create(``);
-        this.weatherService = new WeatherService(this.city);
-        this.pollutionService = new PollutionService(this.city);
     }
 
     /**
      * @param {String} cityName 
      * @returns {City}
      */
-    create(cityName) {
+    create(name) {
         this.city = new City;
-        this.city.name = cityName;
+        this.city.name = name;
         this.city.weather = this.weatherService.create();
         this.city.pollution = this.pollutionService.create();
         return this.city;
     }
 
     /**
-     * @param {String} name
      * @returns {Promise}
      */
-    retrieveCity(name) {
+    retrieve() {
         return new Promise((resolve, reject) => {
             this.weatherService
-                .retrieveWeather(name)
-                .then(() => this.pollutionService.retrievePollution(name)
+                .retrieveByName(this.city.name)
+                .then(() => this.pollutionService.retrieveByName(this.city.name)
                     .then(() => resolve(this.city))
                     .catch(error => reject(error))
                     .finally())
