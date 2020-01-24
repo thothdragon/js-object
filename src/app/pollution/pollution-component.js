@@ -1,9 +1,10 @@
 import "./pollution-component.scss";
+import { PollutionService } from "../shared/services/pollution-service";
 
 export class PollutionComponent {
 
     /**
-     * @param {CityService} service 
+     * @param {PollutionService} service 
      */
     constructor(service) {
         this.service = service;
@@ -22,13 +23,13 @@ export class PollutionComponent {
         if (!element.innerHTML) {
             element.innerHTML = this.template;
         }
-        if (null !== this.service.city.pollution.airQuality) {
+        if (null !== this.service.pollution.airQuality) {
             document.querySelector(`${this.selector} aw-aqi`)
-                .innerHTML = this.service.city.pollution.airQuality;
+                .innerHTML = this.service.pollution.airQuality;
             document.querySelector(`${this.selector} aw-pm25`)
-                .innerHTML = this.service.city.pollution.fineParticle;
+                .innerHTML = this.service.pollution.fineParticle;
             document.querySelector(`${this.selector} aw-o3`)
-                .innerHTML = this.service.city.pollution.ozone;
+                .innerHTML = this.service.pollution.ozone;
         }
     }
     

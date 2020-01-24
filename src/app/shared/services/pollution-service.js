@@ -31,7 +31,7 @@ export class PollutionService {
                 if (200 !== xhr.status) {
                     return reject(xhr.status);
                 };
-                const json = JSON.parse(xhr.response);
+                const json = JSON.parse(xhr.response);                
                 this.pollution.airQuality = json.data.aqi;
                 json.data.iaqi.pm25
                     ? this.pollution.fineParticle = json.data.iaqi.pm25.v

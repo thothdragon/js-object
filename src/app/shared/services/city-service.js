@@ -1,10 +1,12 @@
 import { City } from "../models/city";
 import { WeatherService } from "./weather-service";
 import { PollutionService } from "./pollution-service";
+import { PositionService } from "./position-service";
 
 export class CityService {
 
     constructor() {
+        this.positionService = new PositionService();
         this.weatherService = new WeatherService();
         this.pollutionService = new PollutionService();
         this.create(``);
@@ -36,5 +38,28 @@ export class CityService {
                 .catch(error => reject(error))
                 .finally();
         });
+    }
+
+    /**
+     * @returns {Promise}
+     */
+    retrieveByCurrentPosition() {
+        return new Promise((resolve, reject) => {
+            this.positionService
+                .retrieve()
+                .then(geolocalisation => {
+                    this.weatherService.retrieveByCoords(geolocalisation.coords.latitude, geolocalisation.coords.longitude)
+                        .then((name) => {
+                            this.city.name = name;
+                            this.pollutionService.retrieveByName(name)
+                            .then(() => resolve(name))
+                            .catch(() => reject(error))
+                            .finally()})
+                        .catch(error => reject(error))
+                        .finally()
+                })
+                .catch(error => reject(error))
+                .finally();
+        })
     }
 }

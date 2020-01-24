@@ -9,10 +9,14 @@ export class AppComponent {
     constructor() {
         this.service = new CityService;
         this.components = [
-            // new WeatherComponent(this.service),
-            // new PollutionComponent(this.service),
-            // new ProgressComponent(this.service)
+            new WeatherComponent(this.service.weatherService),
+            new PollutionComponent(this.service.pollutionService),
+            new ProgressComponent(this.service)
         ];
+        this.service
+            .retrieveByCurrentPosition()
+            .then(name => name)
+            .catch(() => reject(error));
         this.selector = `aw-app`;
         this.template = `
             <aw-progress></aw-progress>
@@ -46,6 +50,7 @@ export class AppComponent {
             document.querySelector(`${this.selector} .city-name`).innerHTML = `<i class="material-icons">location_on</i> ${this.service.city.name}`;
         }
         this.components.forEach(component => component.render());
+
     }
 
     events() {
@@ -62,7 +67,7 @@ export class AppComponent {
         this.render();
         this.service
             .retrieve()
-            .then(city => console.log(city))
+            .then(city => { })
             .catch(error => console.log(error))
             .finally(() => this.render());
         input.value = ``;

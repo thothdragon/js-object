@@ -1,9 +1,10 @@
 import "./weather-component.scss";
+import { WeatherService } from "../shared/services/weather-service";
 
 export class WeatherComponent {
 
     /**
-     * @param {CityService} service 
+     * @param {WeatherService} service 
      */
     constructor(service) {
         this.service = service;
@@ -39,22 +40,21 @@ export class WeatherComponent {
     }
 
     render() {
-
         const element = document.querySelector(this.selector);
         if (!element.innerHTML) {
             element.innerHTML = this.template;
         }
-        if (null !== this.service.city.weather.temperature.actual) {
+        if (null !== this.service.weather.temperature.actual) {
             document.querySelector(`${this.selector} aw-tempact`)
-                .innerHTML = this.service.city.weather.temperature.actual;
+                .innerHTML = this.service.weather.temperature.actual;
             document.querySelector(`${this.selector} aw-weatherdesc`)
-                .innerHTML = this.service.city.weather.description;
+                .innerHTML = this.service.weather.description;
             document.querySelector(`${this.selector} aw-humidity`)
-                .innerHTML = this.service.city.weather.humidity;
+                .innerHTML = this.service.weather.humidity;
             document.querySelector(`${this.selector} aw-wind`)
-                .innerHTML = this.service.city.weather.wind;
+                .innerHTML = this.service.weather.wind;
             document.querySelector(`${this.selector} aw-tempminmax`)
-                .innerHTML = `${this.service.city.weather.temperature.min} °C - ${this.service.city.weather.temperature.max} °C`;
+                .innerHTML = `${this.service.weather.temperature.min} °C - ${this.service.weather.temperature.max} °C`;
         }
     }
 
