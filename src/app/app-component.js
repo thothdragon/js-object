@@ -9,9 +9,9 @@ export class AppComponent {
     constructor() {
         this.service = new CityService;
         this.components = [
-            new WeatherComponent(this.service),
-            new PollutionComponent(this.service),
-            new ProgressComponent(this.service)
+            // new WeatherComponent(this.service),
+            // new PollutionComponent(this.service),
+            // new ProgressComponent(this.service)
         ];
         this.selector = `aw-app`;
         this.template = `

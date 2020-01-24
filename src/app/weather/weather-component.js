@@ -12,7 +12,8 @@ export class WeatherComponent {
             <div class="center">
                 <div>
                     <div>
-                        <i class="material-icons">filter_drama</i> <h2><aw-tempact class="temperature">0</aw-tempact>  °C</h2>
+                        <i class="material-icons">filter_drama</i> 
+                        <h2><aw-tempact class="temperature">0</aw-tempact>  °C</h2>
                     </div>
                     <div>
                         <aw-weatherdesc>-</aw-weatherdesc>
@@ -22,8 +23,14 @@ export class WeatherComponent {
             <div class="center">
                 <div class="row">
                     <div class="tabs">
-                        <div class="tab col s4"><i class="material-icons">bubble_chart</i> <aw-humidity>-</aw-humidity> %</div>
-                        <div class="tab col s4 wind"><i class="material-icons">toys</i> <aw-wind>-</aw-wind> hPa</div>
+                        <div class="tab col s4">
+                            <i class="material-icons">bubble_chart</i> 
+                            <aw-humidity>-</aw-humidity> %
+                        </div>
+                        <div class="tab col s4 wind">
+                            <i class="material-icons">toys</i> 
+                            <aw-wind>-</aw-wind> hPa
+                        </div>
                         <div class="tab col s4"><i class="material-icons">swap_vert</i> <aw-tempminmax>0 °C - 0 °C</aw-tempminmax></div>
                     </div>
                 </div>
