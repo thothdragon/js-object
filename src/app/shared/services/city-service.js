@@ -52,9 +52,10 @@ export class CityService {
                         .then((name) => {
                             this.city.name = name;
                             this.pollutionService.retrieveByName(name)
-                            .then(() => resolve(name))
-                            .catch(() => reject(error))
-                            .finally()})
+                                .then(() => resolve(name))
+                                .catch(() => reject(error))
+                                .finally()
+                        })
                         .catch(error => reject(error))
                         .finally()
                 })
