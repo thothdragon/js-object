@@ -6,8 +6,8 @@ export class CityService {
 
     constructor() {
         this.city = new City;
-        this.weatherService = new WeatherService;
-        this.pollutionService = new PollutionService;
+        this.weatherService = new WeatherService(this.city);
+        this.pollutionService = new PollutionService(this.city);
     }
 
     /**
@@ -17,14 +17,6 @@ export class CityService {
     create(cityName) {
         this.city.name = cityName;
         return this.city;
-    }
-
-    retrieveWeather(render, cityName) {
-        this.weatherService.retrieveWeatherService(this.city, render, cityName);
-    }
-
-    retrievePollution(render, cityName) {
-        this.pollutionService.retrievePollutionService(this.city, render, cityName);
     }
 
 }

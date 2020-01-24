@@ -2,6 +2,9 @@ import "./weather-component.scss";
 
 export class WeatherComponent {
 
+    /**
+     * @param {CityService} service 
+     */
     constructor(service) {
         this.service = service;
         this.selector = "aw-weather";

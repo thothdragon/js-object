@@ -2,7 +2,10 @@ import "./pollution-component.scss";
 
 export class PollutionComponent {
 
-    constructor(service) {        
+    /**
+     * @param {CityService} service 
+     */
+    constructor(service) {
         this.service = service;
         this.selector = "aw-pollution";
         this.template = `
@@ -20,10 +23,13 @@ export class PollutionComponent {
             element.innerHTML = this.template;
         }
         if (null !== this.service.city.pollution.airQuality) {
-            document.querySelector(`${this.selector} aw-aqi`).innerHTML = this.service.city.pollution.airQuality;
-            document.querySelector(`${this.selector} aw-pm25`).innerHTML = this.service.city.pollution.fineParticle;
-            document.querySelector(`${this.selector} aw-o3`).innerHTML = this.service.city.pollution.ozone;
+            document.querySelector(`${this.selector} aw-aqi`)
+                .innerHTML = this.service.city.pollution.airQuality;
+            document.querySelector(`${this.selector} aw-pm25`)
+                .innerHTML = this.service.city.pollution.fineParticle;
+            document.querySelector(`${this.selector} aw-o3`)
+                .innerHTML = this.service.city.pollution.ozone;
         }
     }
-
+    
 }

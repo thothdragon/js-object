@@ -60,8 +60,18 @@ export class AppComponent {
         const input = document.querySelector(`${this.selector} .sidenav input`);
         this.service.create(input.value);
         this.render();
-        this.service.retrieveWeather(() => { this.render() }, input.value);
-        this.service.retrievePollution(() => { this.render() }, input.value);
+        this.service
+            .weatherService.retrieveWeather()
+            .then(weather => {
+                this.service
+                    .pollutionService.retrievePollution()
+                    .then(pollution => console.log(pollution))
+                    .catch(error => console.log(error))
+                    .finally(() => this.render());
+            })
+            .catch(error => console.log(error))
+            .finally(() => this.render());
+
         input.value = ``;
         M.Sidenav.getInstance(document.querySelector(`${this.selector} .sidenav`)).close();
     };
