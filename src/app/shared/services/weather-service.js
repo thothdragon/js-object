@@ -32,8 +32,6 @@ export class WeatherService {
                     return reject(xhr.status);
                 };
                 const json = JSON.parse(xhr.response);
-                console.log(json);
-
                 this.weather.description = json.weather[0].main;
                 this.weather.humidity = json.main.humidity;
                 this.weather.wind = json.main.pressure;

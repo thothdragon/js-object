@@ -15,7 +15,7 @@ export class AppComponent {
         ];
         this.service
             .retrieveByCurrentPosition()
-            .then(name => { })
+            .then(name => this.render())
             .catch(() => reject(error))
             .finally(() => this.render());
         this.selector = `aw-app`;
