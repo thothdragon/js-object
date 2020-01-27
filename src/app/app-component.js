@@ -15,8 +15,9 @@ export class AppComponent {
         ];
         this.service
             .retrieveByCurrentPosition()
-            .then(name => name)
-            .catch(() => reject(error));
+            .then(name => { })
+            .catch(() => reject(error))
+            .finally(() => this.render());
         this.selector = `aw-app`;
         this.template = `
             <aw-progress></aw-progress>

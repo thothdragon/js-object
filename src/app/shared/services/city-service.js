@@ -50,14 +50,14 @@ export class CityService {
                 .then(geolocalisation => {
                     this.weatherService.retrieveByCoords(geolocalisation.coords.latitude, geolocalisation.coords.longitude)
                         .then((name) => {
-                            this.city.name = name;
                             this.pollutionService.retrieveByName(name)
                                 .then(() => resolve(name))
                                 .catch(() => reject(error))
-                                .finally()
+                                .finally();
+                            this.city.name = name;
                         })
                         .catch(error => reject(error))
-                        .finally()
+                        .finally();
                 })
                 .catch(error => reject(error))
                 .finally();
